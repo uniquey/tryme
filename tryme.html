@@ -1,13 +1,53 @@
 <head>
-  <title>tryme</title>
+  <title>meteortest</title>
 </head>
 
+
 <body>
-  {{> hello}}
+  <h1>It is 7.16</h1>
+  <h2>This day's job</h2>
+  {{>names}}
+  <h3>Just try</h3>
+  	{{>staff}}
+  <div class="container">
+    <h3>next should be done：</h3>
+    <p>do a list of vist who's coming</p>
+  </div>
+  <h1>
+  <strong>now: {{>nowdate}}</strong>
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+
+<template name="names">
+  <h4>Try to imput your name in the box below</h4>
+  <imput>{{imputname}}</imput>
+  <ul>
+    {{#each vistornames}}
+    <li>{{this}}</li>
+    {{/each}}
+   </ul>
+  <h5>author is {{myname}}</h5>
+  <p> {{date}} </p>
+ </template>
+
+<template name="staff">
+	<p>In my team, there're {{person.length}} members</p>
+<ul>
+	{{#each person}}
+	<h5>{{firstname}}</h5>
+	<li>{{>girl}}</li>
+	{{/each}}
+</ul>		
+</template>
+
+<template name="girl">
+	{{#if executive}} 
+	<strong>{{sex}}</strong>
+	{{else}}
+	 {{sex}}
+	 {{/if}}
+</template>
+
+<template name="nowdate">
+	{{newdate}}
 </template>
