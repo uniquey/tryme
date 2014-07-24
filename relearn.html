@@ -1,0 +1,27 @@
+<head>
+	<title>relarn</title>
+</head>
+<template name="relearn">
+	<ol>
+		<li>
+			{{>jul23}}
+			Today is 7.23
+		</li>
+	</ol>
+</template>
+
+<template name="jul23">
+	<h4>Would you write down something to leave footprint here?</h4>
+	<input type="text" id="text" />
+	<p>There is {{feet.length}} footprint here now.
+	<br />If you want to remove your footprint, you'd like to click it.
+	</p>
+	<ul>
+		{{#each feet}}
+		{{>foot}}
+		{{/each}}
+	</ul>
+</template>
+<template name="foot">
+	<li>{{this}}</li>
+</template>
